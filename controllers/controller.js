@@ -4,36 +4,48 @@ var snacks = require("../models/cravings");
 var router = express.Router();
 
 router.get('/', function (req, res) {
-    res.redirect('/cravings');
-});
-
-router.get('/cravings', function (req, res) {
-    db.Cravings.findAll({ raw: true }).then(function(snacks) {
-        console.log('getting snacks', snacks)
-        res.render('index', { snack_data: snacks });
-    });
+    db.cravings.findAll({raw:true}).then(function(data){
+        var hbsobject = {
+            cravings: data
+        }
+        console.log("this is cravings", data);
+        res.render("index", hbsobject)
+    })
 });
 
 router.post('/cravings/create', function (req, res) {
-    db.Cravings.create({
+    console.log("hit the route", req.body);
+    db.cravings.create({
         name: req.body.name,
         devoured: false
-    }).then(function(snacks) {
-        console.log('created new snack', snacks);
-        res.redirect('/');
+    }).then(function(newCrave){
+        console.log(newCrave)
+        res.json(newCrave);
     })
 });
 
 router.put('/cravings/:id', function (req, res) {
-    db.Cravings.update({
+    db.cravings.update({
+        name: req.body.name,
         devoured: true
     }, {
         where: {
             id: req.params.id
         }
-    }).then(function(snacks) {
-        res.sendStatus(200);
+    }).then(function(hbsobject) {
+        res.json(hbsobject);
     })
 });
+
+router.delete('cravings/:id', function (req, res) {
+    db.cravings.destroy({
+        id: req.params.id
+    }).then(function(hbsobject){
+          res.json(hbsobject);
+        })
+});
+
+app.use(routes);
+
 
 module.exports = router;
