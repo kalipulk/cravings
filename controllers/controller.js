@@ -1,43 +1,39 @@
 var express = require("express");
+var db = require("../models")
+var snacks = require("../models/cravings");
 var router = express.Router();
 
-var snacks = require("../models/cravings")
+router.get('/', function (req, res) {
+    res.redirect('/cravings');
+});
 
-router.get("/", function (req, res) {
-    burger.all(function (data) {
-        var hbsObject = {
-            snacks: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
+router.get('/cravings', function (req, res) {
+    db.Cravings.findAll({ raw: true }).then(function(snacks) {
+        console.log('getting snacks', snacks)
+        res.render('index', { snack_data: snacks });
     });
 });
 
-router.put("/api/snacks/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
+router.post('/cravings/create', function (req, res) {
+    db.Cravings.create({
+        name: req.body.name,
+        devoured: false
+    }).then(function(snacks) {
+        console.log('created new snack', snacks);
+        res.redirect('/');
+    })
+});
 
-    console.log("condition", condition);
-    burger.update({
-        devoured: req.body.devour
-    }, condition, function (result) {
-        if (result.changedRows == 0) {
-            // If no rows were changed, then the ID must not exist, so 404
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
+router.put('/cravings/:id', function (req, res) {
+    db.Cravings.update({
+        devoured: true
+    }, {
+        where: {
+            id: req.params.id
         }
-    });
+    }).then(function(snacks) {
+        res.sendStatus(200);
+    })
 });
-
-router.post("/api/snacks", function(req, res) {
-    burger.create([
-      "snack_name"
-    ], [
-      req.body.burger_name
-    ], function(result) {
-      // Send back the ID of the new quote
-      res.json({ id: result.insertId });
-    });
-  });
 
 module.exports = router;
