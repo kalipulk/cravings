@@ -1,0 +1,28 @@
+{
+  "name": "cravings",
+  "version": "1.0.0",
+  "description": "App that lets users input the names of comfort foods you'd like to eat!",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalipulk/cravings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kalipulk/cravings/issues"
+  },
+  "homepage": "https://github.com/kalipulk/cravings#readme"
+}
