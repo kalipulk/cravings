@@ -1,11 +1,35 @@
-<h1>Hello</h1>
+<div id="title">Cravings</div>
+<img src="assets/img/pretzel.png">
 
-<input id="snack_name"></input>
-<button id="create_snack">create</button>
+<div id="main container">
 
-<button id="delete_snack">delete</button>
+    <div id="col-1">
+        <div id="avail-snacks">
+            {{#each cravings}}
+                {{#unless devoured}}
+                    <h1>{{name}}</h1>
+                    <button class="eat_snack" snackid={{id}}>eat snack</button>
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>
 
-{{#each cravings}}
-<h1>{{name}}</h1>
-{{/each}}
+    <div id="col-2">
+        <div id="eaten-snacks">
+            {{#each cravings}}
+                {{#if devoured}}
+                <h1>{{name}}</h1>
+                <button class="delete_snack" snackid={{id}}>delete snack</button>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div id="new-snack-section">
+    {{!-- <form> --}}
+    <input id="snack_name"></input>
+    <button id="create_snack">create new snack</button>
+    {{!-- </form> --}}
+</div>
 

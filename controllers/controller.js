@@ -25,8 +25,9 @@ router.post('/cravings/create', function (req, res) {
 });
 
 router.put('/cravings/:id', function (req, res) {
+    console.log("hit the put route");
     db.cravings.update({
-        name: req.body.name,
+        // name: req.body.name,
         devoured: true
     }, {
         where: {
@@ -37,15 +38,17 @@ router.put('/cravings/:id', function (req, res) {
     })
 });
 
-router.delete('cravings/:id', function (req, res) {
+router.delete('/cravings/:id', function (req, res) {
     db.cravings.destroy({
-        id: req.params.id
+        where: {
+            id: req.params.id
+        }
     }).then(function(hbsobject){
           res.json(hbsobject);
         })
 });
 
-app.use(routes);
+// app.use(routes);
 
 
 module.exports = router;
