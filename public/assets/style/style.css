@@ -5,7 +5,7 @@ body {
     background-repeat: repeat;
     background-color: #cccccc;
     font-family: 'Comfortaa', cursive;
-    color: #000;
+    font-weight: lighter;
     text-align: center;
 }
 
@@ -13,17 +13,25 @@ body {
     font-family: 'Staatliches', cursive;
     font-size: 90px;
     font-weight: bold;
+    color: #000;
 
 }
 
 #description {
-    font-weight: bold;
     font-size: 20px;
     background-color: #f1ac36;
     border: solid 1px #000;
     border-radius: 7px;
+    color: #fff;
     padding: 5px;
     width: auto;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #fff;
 }
 
 .delete_snack {
@@ -32,23 +40,31 @@ body {
 
 #col-1, #col-2 {
     background-color: #83cabe;
-    /* opacity: 0.75; */
-    float: left;
-    width: 45%;
     border: solid 1px #000;
     border-radius: 7px;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* float: left; */
+    justify-content: center;
     margin: 15px;
+    /* opacity: 0.75; */
     padding: 15px;
+    width: 45%;
+}
+.snack {
+    font-weight: bolder;
+    font-size: 28px;
 }
 
 #avail-snack, #eaten-snacks {
-    opacity: none;
+    font-weight: bolder;
 }
 
-#new_snack-section {
-    background-color: #eb9f8b;
+#new-snack-section {
+    background-color: #e98e91;
     border: solid 1px #000;
     border-radius: 7px;
+    padding:15px;
 }
 
 /* font-family: 'Comfortaa', cursive;

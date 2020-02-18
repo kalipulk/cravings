@@ -1,16 +1,16 @@
 <div id="title">CRAVINGS</div>
 <div id="description">
-    manage all your latest cravings in one place
+    manage all your latest cravings in one place.
     click the buttons to "eat" your favorites, or add a new snack below!
 </div>
 
-<div id="main container">
+<div id="main-container">
 
     <div id="col-1">
         <div id="avail-snacks">
             {{#each cravings}}
             {{#unless devoured}}
-            <h1>{{name}}</h1>
+            <div class="snack">{{name}}</div>
             <button class="eat_snack" snackid={{id}}>eat snack</button>
             {{/unless}}
             {{/each}}
@@ -21,17 +21,18 @@
         <div id="eaten-snacks">
             {{#each cravings}}
             {{#if devoured}}
-            <h1>{{name}}</h1>
+            <div class="snack">{{name}}</div>
             <button class="delete_snack" snackid={{id}}>delete snack</button>
             {{/if}}
             {{/each}}
         </div>
     </div>
+
 </div>
 
-<div id="new-snack-section">
-    {{!-- <form> --}}
-    <input id="snack_name"></input>
-    <button id="create_snack">create new snack</button>
-    {{!-- </form> --}}
+<div id="secondary-container">
+    <div id="new-snack-section">
+        <input id="snack_name"></input>
+        <button id="create_snack">create new snack</button>
+    </div>
 </div>
