@@ -1,0 +1,55 @@
+body {
+    background-image: url("../img/Pattern45.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    background-color: #cccccc;
+    font-family: 'Comfortaa', cursive;
+    color: #000;
+    text-align: center;
+}
+
+#title {
+    font-family: 'Staatliches', cursive;
+    font-size: 90px;
+    font-weight: bold;
+
+}
+
+#description {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #f1ac36;
+    border: solid 1px #000;
+    border-radius: 7px;
+    padding: 5px;
+    width: auto;
+}
+
+.delete_snack {
+    color: #83cabe;
+}
+
+#col-1, #col-2 {
+    background-color: #83cabe;
+    /* opacity: 0.75; */
+    float: left;
+    width: 45%;
+    border: solid 1px #000;
+    border-radius: 7px;
+    margin: 15px;
+    padding: 15px;
+}
+
+#avail-snack, #eaten-snacks {
+    opacity: none;
+}
+
+#new_snack-section {
+    background-color: #eb9f8b;
+    border: solid 1px #000;
+    border-radius: 7px;
+}
+
+/* font-family: 'Comfortaa', cursive;
+font-family: 'Staatliches', cursive; */
