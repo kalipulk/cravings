@@ -9,10 +9,10 @@
     <div id="col-1">
         <div id="avail-snacks">
             {{#each cravings}}
-            {{#unless devoured}}
-            <div class="snack">{{name}}</div>
-            <button class="eat_snack" snackid={{id}}>eat snack</button>
-            {{/unless}}
+                {{#unless devoured}}
+                    <div class="snack">{{name}}</div>
+                    <button class="eat_snack" snackid={{id}}>eat snack</button>
+                {{/unless}}
             {{/each}}
         </div>
     </div>
@@ -20,10 +20,10 @@
     <div id="col-2">
         <div id="eaten-snacks">
             {{#each cravings}}
-            {{#if devoured}}
-            <div class="snack">{{name}}</div>
-            <button class="delete_snack" snackid={{id}}>delete snack</button>
-            {{/if}}
+                {{#if devoured}}
+                    <div class="snack">{{name}}</div>
+                    <button class="delete_snack" snackid={{id}}>delete snack</button>
+                {{/if}}
             {{/each}}
         </div>
     </div>
@@ -32,7 +32,7 @@
 
 <div id="secondary-container">
     <div id="new-snack-section">
-        <input id="snack_name"></input>
-        <button id="create_snack">create new snack</button>
+        <input id="snack_name" required></input>
+        <button id="create_snack"><i class="fas fa-drumstick-bite"></i>  create new snack</button>
     </div>
 </div>

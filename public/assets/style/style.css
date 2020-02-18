@@ -34,30 +34,46 @@ body {
     color: #fff;
 }
 
-.delete_snack {
-    color: #83cabe;
-}
-
 #col-1, #col-2 {
     background-color: #83cabe;
     border: solid 1px #000;
     border-radius: 7px;
     /* display: flex; */
     /* flex-direction: row; */
-    /* float: left; */
     justify-content: center;
     margin: 15px;
-    /* opacity: 0.75; */
     padding: 15px;
     width: 45%;
 }
 .snack {
-    font-weight: bolder;
-    font-size: 28px;
+    font-size: 24px;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 
-#avail-snack, #eaten-snacks {
-    font-weight: bolder;
+button {
+    background-color: #fff;
+    border: solid 1px #000;
+    border-radius: 7px;
+    box-shadow: 3px 3px #666;
+    outline: none;
+    font-family: 'Staatliches', cursive;
+    font-size: 16px;
+    margin: auto;
+    padding: 5px;
+}
+
+button:hover {
+    background-color: #d5dfe9;
+}
+
+button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 #new-snack-section {
@@ -65,6 +81,23 @@ body {
     border: solid 1px #000;
     border-radius: 7px;
     padding:15px;
+    width: auto;
+    margin: auto;
+}
+
+#create_snack {
+    font-size: 20px;
+}
+input {
+    border: solid 1px #000;
+    border-radius: 7px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
+    line-height: 1.5;
+    outline: none;
+    width: 400px;
+    /* margin: 5px; */
+    padding: 5px;
 }
 
 /* font-family: 'Comfortaa', cursive;
